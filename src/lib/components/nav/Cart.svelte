@@ -209,7 +209,7 @@
 					</Card.Root>
 				{/each}
 				<div class="mt-4 flex flex-col justify-center px-4">
-					<Button onclick={checkout} disabled={loading} class="rounded-full text-lg">
+					<Button onclick={checkout} disabled class="rounded-full text-lg">
 						{loading ? 'Processing...' : 'Checkout'}
 					</Button>
 					<Sheet.Close asChild>

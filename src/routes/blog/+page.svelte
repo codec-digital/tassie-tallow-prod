@@ -70,12 +70,6 @@
 	let filterBy = 'all';
 	let sortBy = 'featured';
 
-	$: tassieTours = blogs.filter((blog) => blog.category === 'Tassie Tours');
-	$: guide = blogs.filter((blog) => blog.category === 'Guide');
-	$: brunyIsland = blogs.filter((blog) => blog.category === 'Bruny Island');
-	$: portArthur = blogs.filter((blog) => blog.category === 'Port Arthur');
-	$: mtField = blogs.filter((blog) => blog.category === 'Mt Field');
-
 	const itemsPerPage = 24;
 
 	function handlePageChange() {
