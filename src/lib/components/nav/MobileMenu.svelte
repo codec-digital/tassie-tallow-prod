@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Accordion from '$lib/components/ui/accordion';
 	import Separator from '../ui/separator/separator.svelte';
+	import ProductSearch from '../shop/ProductSearch.svelte';
 </script>
 
 <div class="flex lg:hidden">
@@ -38,6 +39,7 @@
 					>100% Tasmanian, Grass-fed Tallow. Handmade in small batches.</Sheet.Description
 				>
 			</Sheet.Header>
+
 			<div class="grid gap-4 py-4">
 				<Sheet.Close>
 					<Button
@@ -106,7 +108,7 @@
 						href="/blog"
 						variant="ghost"
 						class="text-md col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
-						>Blog</Button
+						>Articles</Button
 					></Sheet.Close
 				>
 				<!-- <Sheet.Close>

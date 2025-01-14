@@ -149,11 +149,11 @@
 		class="mx-auto flex max-w-5xl flex-col items-center justify-center px-4 py-12 text-center lg:py-24"
 	>
 		<h1
-			class="font-heading mx-auto mb-0 mt-12 max-w-2xl scroll-m-20 text-center text-3xl font-bold tracking-tight text-background lg:mx-0 lg:text-5xl"
+			class="mx-auto mb-0 mt-12 max-w-2xl scroll-m-20 text-center font-heading text-3xl font-bold tracking-tight text-background lg:mx-0 lg:text-5xl"
 		>
 			GET IN TOUCH
 		</h1>
-		<p class="mt-12 max-w-3xl text-xl font-bold">
+		<p class="mt-12 max-w-3xl font-bold lg:text-xl">
 			At Tassie Tallow, we value clear communication and excellent customer service. Here's how you
 			can reach us:
 		</p>
@@ -199,7 +199,7 @@
 				</div>
 			</div>
 		</div>
-		<p class="mt-12 max-w-3xl text-xl font-bold">
+		<p class="mt-12 max-w-3xl font-bold lg:text-xl">
 			Turnaround on response may vary due to the dynamic demands of our days. For all non-urgent
 			enquiries, please submit the form below and we will get back to you as soon as possible.
 		</p>
@@ -313,7 +313,7 @@
 					{#each section.items as item, itemIndex}
 						<Accordion.Item open={value} value={`item-${itemIndex + 1}`} class="border-muted">
 							<Accordion.Trigger
-								class="font-heading text-left font-medium text-secondary lg:text-xl"
+								class="text-left font-heading font-medium text-secondary lg:text-xl"
 								>{item.question}</Accordion.Trigger
 							>
 							<Accordion.Content class="text-md py-4 pl-4 text-secondary">

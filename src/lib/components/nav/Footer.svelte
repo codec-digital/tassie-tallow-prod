@@ -22,7 +22,7 @@
 		support: [
 			{ name: 'About', href: '/about' },
 			{ name: 'FAQ', href: '/faq' },
-			{ name: 'Blog', href: '/blog' },
+			{ name: 'Articles', href: '/blog' },
 			{ name: 'Cooking', href: '/cooking' }
 		],
 		company: [

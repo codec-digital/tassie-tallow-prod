@@ -389,7 +389,7 @@ export async function updateCart({ cartId, lineId, variantId, quantity }) {
 	});
 }
 
-export async function addToCart({ cartId, variantId }) {
+export async function addToCart({ cartId, variantId, quantity = 1 }) {
 	return shopifyFetch({
 		query: `
       mutation addToCart($cartId: ID!, $lines: [CartLineInput!]!) {
@@ -419,7 +419,7 @@ export async function addToCart({ cartId, variantId }) {
 			lines: [
 				{
 					merchandiseId: variantId,
-					quantity: 1
+					quantity: quantity
 				}
 			]
 		}

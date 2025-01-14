@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ProductCard from '$lib/components/shop/ProductCard.svelte';
 	import { getCartItems } from '$lib/store.js';
-	import { ArrowRight, ArrowLeft, Minus, Plus } from 'lucide-svelte';
+	import { ArrowRight, ArrowLeft, Minus, Plus, Loader2 } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
@@ -9,6 +9,8 @@
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
 	import Featured from '$lib/components/Featured.svelte';
+	import { refreshCart } from '$lib/utils/cartStore';
+	import { toast } from 'svelte-sonner';
 
 	const { data } = $props<{
 		data: import('./$types').PageData;
@@ -120,12 +122,25 @@
 				)
 			)?.node.id;
 
+			// Use the updated shopify.js addToCart function
 			await fetch('/cart.json', {
 				method: 'PATCH',
-				body: JSON.stringify({ cartId, variantId })
+				body: JSON.stringify({
+					cartId,
+					variantId,
+					quantity // Add the quantity here
+				})
 			});
 
 			await getCartItems();
+			await refreshCart();
+			toast.success('Added to cart', {
+				description: `${data.body.product.title}`,
+				action: {
+					label: 'Dismiss',
+					onClick: () => console.info('Undo')
+				}
+			});
 		} catch (error) {
 			console.error('Error adding to cart:', error);
 		} finally {
@@ -290,7 +305,7 @@
 										variant="ghost"
 										size="icon"
 										class="h-full px-2 hover:bg-transparent"
-										on:click={decrement}
+										onclick={decrement}
 										disabled={quantity <= MIN_QUANTITY}
 									>
 										<Minus class="h-4 w-4" />
@@ -304,14 +319,14 @@
 										value={quantity}
 										min={MIN_QUANTITY}
 										max={MAX_QUANTITY}
-										on:input={handleInput}
+										oninput={handleInput}
 									/>
 
 									<Button
 										variant="ghost"
 										size="icon"
 										class="h-full px-2 hover:bg-transparent"
-										on:click={increment}
+										onclick={increment}
 										disabled={quantity >= MAX_QUANTITY}
 									>
 										<Plus class="h-4 w-4" />
@@ -319,8 +334,12 @@
 									</Button>
 								</div>
 
-								<Button on:click={addToCart} class="rounded-full font-semibold">
-									{cartLoading ? 'Adding...' : 'ADD TO CART'}
+								<Button onclick={addToCart} class="w-32 rounded-full font-semibold">
+									{#if cartLoading}
+										<Loader2 class="animate-spin" />
+									{:else}
+										ADD TO CART
+									{/if}
 								</Button>
 							{:else}
 								<Button disabled class="rounded-full font-semibold opacity-50">OUT OF STOCK</Button>
@@ -340,7 +359,7 @@
 <section class="px-4 pt-12 lg:px-10 xl:px-20">
 	<div class="border-t-2 border-muted pt-12">
 		<h2
-			class="font-heading mx-auto mb-0 scroll-m-20 text-center text-2xl font-medium tracking-tight transition-colors first:mt-0 lg:text-3xl"
+			class="mx-auto mb-0 scroll-m-20 text-center font-heading text-2xl font-medium tracking-tight transition-colors first:mt-0 lg:text-3xl"
 		>
 			You might also like
 		</h2>

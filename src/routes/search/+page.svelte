@@ -66,17 +66,24 @@
 	];
 </script>
 
-<section class=" px-4 py-8 lg:px-10 xl:px-20">
+<section class="px-4 py-8 lg:px-10 xl:px-20">
 	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-8">
 		<h4 class="mb-0 font-sans text-lg font-bold">TASSIE TALLOW</h4>
 		<h2 class="mt-2 text-center text-3xl lg:text-4xl">Shop all the good stuff</h2>
-		<div>
+		<div class="w-full overflow-hidden">
 			<div
-				class="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 whitespace-nowrap px-4 text-sm"
+				class="mx-auto mt-6 flex max-w-3xl items-center gap-3 overflow-x-auto px-4 text-sm lg:flex-wrap lg:justify-center lg:overflow-x-visible"
 			>
 				{#each categories as category}
 					<a
-						class="rounded-full border border-secondary px-4 py-2 text-sm text-secondary hover:bg-secondary/5 hover:underline"
+						class="flex-none rounded-full border border-secondary px-4 py-2 text-sm text-secondary hover:bg-secondary/5 hover:underline lg:flex-initial {category.title ===
+						'All Products'
+							? !search
+								? 'bg-secondary/5 underline'
+								: ''
+							: search?.toLowerCase() === category.link.split('=')[1]?.toLowerCase()
+								? 'bg-secondary/5 underline'
+								: ''}"
 						href={category.link}>{category.title}</a
 					>
 				{/each}
@@ -84,7 +91,6 @@
 		</div>
 	</div>
 </section>
-
 <div class="mx-auto px-4 pb-12 lg:px-10 xl:px-20">
 	<div class="grid w-full grid-cols-2 place-items-end justify-between lg:flex">
 		<ProductSearch />
@@ -135,7 +141,7 @@
 							{:else}
 								<Pagination.Item>
 									<Pagination.Link
-										class="hover:bg-muted"
+										class="rounded-full hover:bg-muted"
 										{page}
 										isActive={currentPage === page.value}
 									>

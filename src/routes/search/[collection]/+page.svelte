@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import ProductCard from '$lib/components/shop/ProductCard.svelte';
@@ -68,7 +68,7 @@
 		'good-fat': {
 			title: 'Cooking Fats',
 			description: `Tallow is suet (kidney and loin) fat. Suet is a highly vascularised and nutrient dense
-			product. It is one of nature’s richest sources of conjugated linoleic acid (CLA). It
+			product. It is one of nature's richest sources of conjugated linoleic acid (CLA). It
 			is typically much firmer than body fat at room temperature.`,
 			categories: [
 				{ title: 'Beef Tallow', link: '/search/good-fat?q=beef+tallow' },
@@ -94,7 +94,7 @@ Our skin care range uses natural fats and ingredients that closely mimics the fa
 		},
 		'snacks-treats': {
 			title: 'Tasmanian Delicacies',
-			description: `A showcase of the products you would find at any of our local farmer’s markets in Tasmania. These local businesses and farms have quality products and tasty treats and we love supporting them.
+			description: `A showcase of the products you would find at any of our local farmer's markets in Tasmania. These local businesses and farms have quality products and tasty treats and we love supporting them.
 These products are to complement your cooking with Tassie Tallow fats, snacks for dietary requirements, and most importantly they're to highlight the wonderful lifestyle & produce that Tasmanian locals are privileged to enjoy.`,
 			categories: [
 				{ title: 'Crackling', link: '/search/snacks-treats?q=crackling' },
@@ -131,7 +131,7 @@ We look forward to providing an all-natural, no-additives option to your pets fo
 	);
 </script>
 
-<section class=" px-4 py-8 lg:px-10 xl:px-20">
+<section class="px-4 py-8 lg:px-10 xl:px-20">
 	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-8">
 		<h4 class="mb-0 font-sans text-lg font-bold">TASSIE TALLOW</h4>
 		<h2 class="mt-2 text-center text-3xl lg:text-4xl">{activeContent.title}</h2>
@@ -140,13 +140,16 @@ We look forward to providing an all-natural, no-additives option to your pets fo
 				{activeContent.description}
 			</p>
 		{/if}
-		<div>
+		<div class="w-full overflow-hidden">
 			<div
-				class="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 whitespace-nowrap px-4 text-sm"
+				class="mx-auto mt-6 flex max-w-3xl items-center gap-3 overflow-x-auto px-4 text-sm lg:flex-wrap lg:justify-center lg:overflow-x-visible"
 			>
 				{#each activeContent.categories as category}
 					<a
-						class="rounded-full border border-secondary px-4 py-2 text-sm text-secondary hover:bg-secondary/5 hover:underline"
+						class="flex-none rounded-full border border-secondary px-4 py-2 text-sm text-secondary hover:bg-secondary/5 hover:underline lg:flex-initial {search?.toLowerCase() ===
+						category.link.split('q=')[1]?.toLowerCase()
+							? 'bg-secondary/5 underline'
+							: ''}"
 						href={category.link}>{category.title}</a
 					>
 				{/each}

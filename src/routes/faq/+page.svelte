@@ -191,7 +191,7 @@
 				</Accordion.Root>
 			</div>
 		{/each}
-		<Button variant="link" href="/contact" class="text-secondary lg:text-lg"
+		<Button variant="link" href="/contact" class="text-base text-secondary lg:text-lg"
 			>Didn't find your answer? Contact us instead</Button
 		>
 	</section>

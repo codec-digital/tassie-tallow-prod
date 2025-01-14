@@ -6,7 +6,7 @@
 
 <section class="p-4 lg:p-20">
 	<div
-		class="flex flex-col-reverse rounded-3xl bg-white/60 lg:grid lg:grid-cols-2 lg:gap-12 lg:p-20"
+		class="flex flex-col-reverse rounded-3xl bg-white/80 lg:grid lg:grid-cols-2 lg:gap-12 lg:p-20"
 	>
 		<div class="flex max-w-2xl flex-col justify-center px-6 py-10 lg:py-0">
 			<h4 class="mb-0 text-center font-sans text-lg font-bold lg:text-left">FAQ</h4>

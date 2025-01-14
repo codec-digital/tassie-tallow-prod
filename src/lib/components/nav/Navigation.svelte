@@ -9,7 +9,7 @@
 
 <div class="flex w-full items-center justify-center bg-primary p-2 text-white">
 	<a href="/search" class="m-0 p-0 text-sm font-bold hover:underline"
-		>FREE Shipping on orders over $100</a
+		>FREE Shipping on orders over $100 - T&Cs apply</a
 	>
 </div>
 
@@ -37,7 +37,7 @@
 			<nav class="flex items-center lg:gap-2">
 				<div class="hidden items-center gap-4 border-r-2 border-muted pr-4 lg:flex">
 					<!-- <a href="/recipes" class="text-sm font-bold hover:underline">RECIPES</a> -->
-					<a href="/blog" class="text-sm font-bold hover:underline">BLOG</a>
+					<a href="/blog" class="text-sm font-bold hover:underline">ARTICLES</a>
 					<a href="/about" class="text-sm font-bold hover:underline">OUR STORY</a>
 					<a href="/faq" class="text-sm font-bold hover:underline">FAQ</a>
 				</div>
@@ -49,7 +49,7 @@
 					<span class="sr-only">Contact</span>
 				</a>
 				<a
-					class=" relative flex items-center justify-center rounded-full p-2 transition-all hover:bg-muted/60"
+					class=" relative hidden items-center justify-center rounded-full p-2 transition-all hover:bg-muted/60 lg:flex"
 					href="/contact"
 				>
 					<User class="h-5 w-5" />

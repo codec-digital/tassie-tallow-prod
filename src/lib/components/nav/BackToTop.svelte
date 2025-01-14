@@ -26,7 +26,7 @@
 	<Button
 		variant="default"
 		size="icon"
-		class="text-text group fixed bottom-2 right-2 z-50 rounded-full bg-background shadow-lg transition-all hover:bg-background  lg:bottom-4 lg:right-4"
+		class="group fixed bottom-2 right-2 z-50 rounded-full bg-background text-foreground shadow-lg transition-all hover:bg-background  lg:bottom-4 lg:right-4"
 		onclick={scrollToTop}
 	>
 		<ChevronUp class="h-5 w-5 transition-all group-hover:-translate-y-1" />

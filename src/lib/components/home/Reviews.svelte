@@ -66,7 +66,7 @@
 					<Carousel.Item class="w-full basis-2/3 lg:basis-1/5">
 						<div class="">
 							<figure
-								class="flex h-80 flex-col justify-between rounded-2xl bg-white/60 px-4 py-6 text-sm/6 lg:h-96 lg:p-8"
+								class="flex h-80 flex-col justify-between rounded-3xl bg-white/80 px-4 py-6 text-sm/6 lg:h-96 lg:p-8"
 							>
 								<blockquote class="line-clamp-6 text-lg font-bold">
 									<p>
