@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+	:root {
+		/* Base colors from design system */
+		--deep-forest: 164 57% 17%; /* #1A3C34 */
+		--rich-earth: 25 76% 31%; /* #8B4513 */
+		--warm-stone: 33 55% 89%; /* #F5E6D3 */
+		--butter-gold: 38 65% 58%; /* #DCA54B */
+		--off-white: 40 50% 96%; /* #FAF6F0 */
+		--charcoal: 0 0% 17%; /* #2C2C2C */
+		--success: 116 39% 26%; /* #2D5A27 */
+		--alert: 9 57% 50%; /* #C64D37 */
+
+		/* Theme colors mapped to shadcn variables */
+		--background: var(--off-white);
+		--foreground: var(--charcoal);
+
+		--muted: var(--warm-stone);
+		--muted-foreground: 25 8% 42%;
+
+		--popover: var(--off-white);
+		--popover-foreground: var(--charcoal);
+
+		--card: var(--off-white);
+		--card-foreground: var(--charcoal);
+
+		--border: var(--rich-earth);
+		--input: var(--rich-earth);
+
+		--primary: var(--deep-forest);
+		--primary-foreground: var(--off-white);
+
+		--secondary: var(--rich-earth);
+		--secondary-foreground: var(--off-white);
+
+		--accent: var(--butter-gold);
+		--accent-foreground: var(--charcoal);
+
+		--destructive: var(--alert);
+		--destructive-foreground: var(--off-white);
+
+		--ring: var(--deep-forest);
+		--radius: 0.5rem;
+
+		/* Custom spacing system */
+		--spacing-micro: 0.25rem; /* 4px */
+		--spacing-tiny: 0.5rem; /* 8px */
+		--spacing-small: 1rem; /* 16px */
+		--spacing-medium: 1.5rem; /* 24px */
+		--spacing-large: 2rem; /* 32px */
+		--spacing-xlarge: 3rem; /* 48px */
+		--spacing-2xlarge: 4rem; /* 64px */
+	}
+
+	.dark {
+		--background: var(--deep-forest);
+		--foreground: var(--off-white);
+
+		--muted: 164 30% 25%;
+		--muted-foreground: var(--warm-stone);
+
+		--popover: var(--deep-forest);
+		--popover-foreground: var(--off-white);
+
+		--card: var(--deep-forest);
+		--card-foreground: var(--off-white);
+
+		--border: var(--rich-earth);
+		--input: var(--rich-earth);
+
+		--primary: var(--off-white);
+		--primary-foreground: var(--deep-forest);
+
+		--secondary: var(--butter-gold);
+		--secondary-foreground: var(--charcoal);
+
+		--accent: var(--warm-stone);
+		--accent-foreground: var(--deep-forest);
+
+		--destructive: var(--alert);
+		--destructive-foreground: var(--off-white);
+
+		--ring: var(--butter-gold);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 1;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Merriweather', serif;
+		@apply font-bold;
+	}
+
+	h1 {
+		@apply mb-8 text-5xl; /* 3rem / 48px */
+	}
+
+	h2 {
+		@apply mb-6 text-4xl; /* 2.5rem / 40px */
+	}
+
+	h3 {
+		@apply mb-4 text-3xl; /* 2rem / 32px */
+	}
+
+	h4 {
+		@apply mb-4 text-2xl; /* 1.5rem / 24px */
+	}
+
+	p {
+		@apply mb-4 leading-relaxed;
+	}
+}
