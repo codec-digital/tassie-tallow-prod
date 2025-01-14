@@ -23,11 +23,11 @@
 			{ name: 'About', href: '/about' },
 			{ name: 'FAQ', href: '/faq' },
 			{ name: 'Articles', href: '/blog' },
-			{ name: 'Cooking', href: '/cooking' }
+			{ name: 'Cooking', href: '/blog' }
 		],
 		company: [
-			{ name: 'Login', href: '#' },
-			{ name: 'Register', href: '#' },
+			{ name: 'Login', href: '/account/login' },
+			{ name: 'Register', href: '/account/login' },
 			{ name: 'Special fat club', href: '#' }
 		],
 		legal: [

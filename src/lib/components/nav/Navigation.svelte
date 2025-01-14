@@ -5,6 +5,7 @@
 	import MobileMenu from '$lib/components/nav/MobileMenu.svelte';
 	import Cart from '$lib/components/nav/Cart.svelte';
 	import Megamenu from '$lib/components/nav/Megamenu.svelte';
+	import GlobalSearch from './GlobalSearch.svelte';
 </script>
 
 <div class="flex w-full items-center justify-center bg-primary p-2 text-white">
@@ -41,16 +42,10 @@
 					<a href="/about" class="text-sm font-bold hover:underline">OUR STORY</a>
 					<a href="/faq" class="text-sm font-bold hover:underline">FAQ</a>
 				</div>
+				<GlobalSearch />
 				<a
 					class=" relative hidden items-center justify-center rounded-full p-2 transition-all hover:bg-muted/60 lg:flex"
-					href="/contact"
-				>
-					<Search class="h-5 w-5" />
-					<span class="sr-only">Contact</span>
-				</a>
-				<a
-					class=" relative hidden items-center justify-center rounded-full p-2 transition-all hover:bg-muted/60 lg:flex"
-					href="/contact"
+					href="/account/login"
 				>
 					<User class="h-5 w-5" />
 					<span class="sr-only">Contact</span>

@@ -174,6 +174,7 @@ We look forward to providing an all-natural, no-additives option to your pets fo
 					<ProductCard
 						title={product.node.title}
 						description={product.node.description}
+						variantId={product.node.variants.edges[0]?.node.id}
 						category={product.node.productType ||
 							product.node.collections?.edges[0]?.node.title ||
 							''}
@@ -224,7 +225,7 @@ We look forward to providing an all-natural, no-additives option to your pets fo
 							{:else}
 								<Pagination.Item>
 									<Pagination.Link
-										class="hover:bg-muted"
+										class="rounded-full hover:bg-muted"
 										{page}
 										isActive={currentPage === page.value}
 									>

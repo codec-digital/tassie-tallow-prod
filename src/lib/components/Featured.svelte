@@ -17,6 +17,7 @@
 						<ProductCard
 							title={product.node.title}
 							description={product.node.description}
+							variantId={product.node.variants.edges[0]?.node.id}
 							category={product.node.productType ||
 								product.node.collections?.edges[0]?.node.title ||
 								''}

@@ -107,6 +107,7 @@
 					<ProductCard
 						title={product.node.title}
 						description={product.node.description}
+						variantId={product.node.variants.edges[0]?.node.id}
 						category={product.node.productType ||
 							product.node.collections?.edges[0]?.node.title ||
 							''}
@@ -120,7 +121,23 @@
 						inStock={product.node.availableForSale}
 					/>
 				{:else}
-					<p>Your search did not yield any results</p>
+					<div class="flex flex-col min-h-screen w-full col-span-4">
+						<p class="text-center lg:text-xl font-heading">Your search did not yield any results</p>
+						<div class="flex flex-col lg:flex-row justify-center gap-2">
+							<a
+								href="/search"
+								class="mx-auto mt-4 flex w-60 items-center justify-center rounded-full bg-primary px-6 py-3 text-center font-bold text-white transition-all hover:bg-primary/80 lg:mx-0"
+							>
+								SHOP ALL</a
+							>
+							<a
+								href="/blog"
+								class="mx-auto mt-4 flex w-60 items-center justify-center rounded-full px-6 py-3 text-center font-bold text-secondary transition-all border border-secondary hover:bg-secondary/10 lg:mx-0"
+							>
+								EXPLORE OTHER TOPICS</a
+							>
+						</div>
+					</div>
 				{/each}
 			</ul>
 

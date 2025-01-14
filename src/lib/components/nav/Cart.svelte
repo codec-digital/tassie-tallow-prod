@@ -7,6 +7,8 @@
 	import { getCartItems } from '$lib/store';
 	import { createCart } from '$lib/utils/shopify';
 	import { cartItems, isLoading, refreshCart } from '$lib/utils/cartStore';
+	import Categories from '../home/Categories.svelte';
+	import CartCategories from './CartCategories.svelte';
 
 	// State management with runes
 	let cartId = $state();
@@ -217,10 +219,18 @@
 			</div>
 		{:else}
 			<div class="flex flex-col items-center justify-center gap-4 py-4">
-				<p class="text-foreground/60">Your cart is empty</p>
-				<Sheet.Close asChild>
-					<Button variant="outline">Continue Shopping</Button>
+				<p class="mb-0 text-foreground/60">Your cart is empty</p>
+				<Sheet.Close class="w-full">
+					<CartCategories />
 				</Sheet.Close>
+				<div class=" flex flex-col justify-center px-4">
+					<Button onclick={checkout} disabled={loading} class="rounded-full text-lg">
+						Shop All
+					</Button>
+					<Sheet.Close asChild>
+						<Button variant="link" class="text-foreground">Continue Shopping</Button>
+					</Sheet.Close>
+				</div>
 			</div>
 		{/if}
 	</Sheet.Content>
