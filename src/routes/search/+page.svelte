@@ -69,7 +69,7 @@
 <section class=" px-4 py-8 lg:px-10 xl:px-20">
 	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-8">
 		<h4 class="mb-0 font-sans text-lg font-bold">TASSIE TALLOW</h4>
-		<h2 class="mt-2 text-3xl lg:text-4xl">Shop all the good stuff</h2>
+		<h2 class="mt-2 text-center text-3xl lg:text-4xl">Shop all the good stuff</h2>
 		<div>
 			<div
 				class="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 whitespace-nowrap px-4 text-sm"

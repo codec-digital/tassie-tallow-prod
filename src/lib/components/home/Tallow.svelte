@@ -46,7 +46,7 @@
 			<Image
 				src="/blog-4.jpeg"
 				alt="Tassie Tallow Tasmania"
-				class_name="absolute inset-0 rounded-3xl h-[400px] lg:h-[600px] w-full"
+				class_name="absolute inset-0 rounded-3xl h-[350px] lg:h-[600px] w-full"
 				priority={true}
 				objectFit="cover"
 			/>

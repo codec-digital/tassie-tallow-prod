@@ -26,6 +26,17 @@
 	import BlogSort from '$lib/components/blog/BlogSort.svelte';
 	import { selectedCategory } from '$lib/utils/blogStore';
 
+	const [send, receive] = crossfade({
+		duration: 400,
+		easing: cubicInOut,
+		fallback(node, params) {
+			return fade(node, {
+				duration: 300,
+				easing: cubicInOut
+			});
+		}
+	});
+
 	let animate = false;
 
 	onMount(() => {
@@ -68,14 +79,9 @@
 
 	function handlePageChange() {
 		setTimeout(() => {
-			// Try both window and documentElement scroll
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 			document.documentElement.scrollTo({ top: 0 });
-
-			// Fallback to body scroll if needed
 			document.body.scrollIntoView({ behavior: 'smooth' });
-
-			// Optional: Add logging for debugging
 			console.log('Page change scroll executed');
 		}, 0);
 	}
@@ -86,21 +92,7 @@
 			: displayedBlogs.filter((blog) => blog.category === $selectedCategory);
 </script>
 
-<!-- <Seo
-	title="Tasmanian Tour From Hobart | Blog - From around the island"
-	description="The latest news and sites from around the beautiful island of Tasmania"
-	keywords="Tasmania Tours, Tasmania local tour, Tassie Tours, Day tours from Hobart, Discover Bruny Island, Cradle Mountain, Active Tasmania tours"
-	siteName="Tassie Tours"
-	imageURL="/src/lib/assets/images/hero-carousel-1.jpg"
-	logo="/src/lib/assets/logo/logo-black.png"
-	author="Tassie Tours"
-	type="website"
-	name="Tassie Tours"
-	index={true}
-	twitter={true}
-	openGraph={true}
-	schemaOrg={true}
-/> -->
+<!-- SEO component commented out -->
 
 <section class="relative mx-auto flex h-[600px] flex-col items-center justify-center">
 	{#key current}
@@ -162,38 +154,6 @@
 			</div>
 		</div>
 	{/key}
-	<!-- <div
-		class="absolute bottom-12 mt-12 flex items-center justify-center gap-1.5 rounded-full bg-foreground/40 px-2 py-1 lg:-mt-8"
-	>
-		<button
-			aria-label="featured blog select"
-			on:click={() => (current = 0)}
-			class={current === 0
-				? 'pointer-events-auto h-3 w-3 rounded-full bg-background/80 transition'
-				: 'pointer-events-auto h-3 w-3 rounded-full bg-foreground/60 transition'}
-		></button>
-		<button
-			aria-label="featured blog select"
-			on:click={() => (current = 1)}
-			class={current === 1
-				? 'pointer-events-auto h-3 w-3 rounded-full bg-background/80 transition'
-				: 'pointer-events-auto h-3 w-3 rounded-full bg-foreground/60 transition'}
-		></button>
-		<button
-			aria-label="featured blog select"
-			on:click={() => (current = 2)}
-			class={current === 2
-				? 'pointer-events-auto h-3 w-3 rounded-full bg-background/80 transition'
-				: 'pointer-events-auto h-3 w-3 rounded-full bg-foreground/60 transition'}
-		></button>
-		<button
-			aria-label="featured blog select"
-			on:click={() => (current = 3)}
-			class={current === 3
-				? 'pointer-events-auto h-3 w-3 rounded-full bg-background/80 transition'
-				: 'pointer-events-auto h-3 w-3 rounded-full bg-foreground/60 transition'}
-		></button>
-	</div> -->
 </section>
 
 <section class=" px-4 py-8 pt-12 lg:px-10 lg:pt-20 xl:px-20">
@@ -214,19 +174,19 @@
 	>
 		{#snippet children({ pages, currentPage })}
 			<ul class="grid auto-rows-min gap-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
-				{#each filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) as blog, index}
+				{#each filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) as blog, index (blog.title)}
 					<a
+						in:receive={{ key: blog.title }}
+						out:send={{ key: blog.title }}
 						href={`/blog/${encodeURIComponent(slugify(blog.title), { lower: true })}`}
 						data-sveltekit-prefetch
 						class="group relative flex flex-col"
 					>
-						<!-- Stock Status and Sale Badges -->
 						<div class="absolute left-4 top-4 z-10 flex flex-col gap-2">
 							<Badge variant="secondary" class="bg-accent text-sm text-white">{blog.category}</Badge
 							>
 						</div>
 
-						<!-- Image container -->
 						<div class="bg-warm-stone/20 aspect-square w-full overflow-hidden rounded-3xl">
 							<Image
 								src={blog.image}
@@ -237,9 +197,7 @@
 							/>
 						</div>
 
-						<!-- Content container -->
 						<div class="mt-4 flex flex-col px-2">
-							<!-- Category and Price row -->
 							<div class="text-text/80 flex items-baseline justify-between">
 								<span class="text-sm">{blog.date}</span>
 								<div class="flex items-baseline gap-2">
@@ -247,11 +205,7 @@
 								</div>
 							</div>
 
-							<!-- Title -->
 							<h3 class="text-deep-forest mt-1 font-sans text-lg font-bold">{blog.title}</h3>
-
-							<!-- Description -->
-
 							<p class="text-text/80 mt-1 line-clamp-2 text-sm">{blog.shortDescription}</p>
 						</div>
 					</a>

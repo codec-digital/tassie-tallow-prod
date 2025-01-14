@@ -9,7 +9,7 @@
 			<Carousel.Item class="w-full  basis-5/6 pl-6 md:basis-5/12 xl:basis-1/4">
 				<a href="/search/good-fat" data-sveltekit-prefetch class="group relative flex flex-col">
 					<!-- Image container -->
-					<div class="bg-warm-stone/20 h-[500px] w-full overflow-hidden rounded-3xl">
+					<div class="bg-warm-stone/20 h-[400px] w-full overflow-hidden rounded-3xl lg:h-[500px]">
 						<Image
 							src="/rib-eye-steak"
 							alt="Tassie Tallow Tasmania"
@@ -34,7 +34,7 @@
 			<Carousel.Item class="w-full  basis-5/6 pl-6 md:basis-5/12 xl:basis-1/4">
 				<a href="/search/skincare" data-sveltekit-prefetch class="group relative flex flex-col">
 					<!-- Image container -->
-					<div class="bg-warm-stone/20 h-[500px] w-full overflow-hidden rounded-3xl">
+					<div class="bg-warm-stone/20 h-[400px] w-full overflow-hidden rounded-3xl lg:h-[500px]">
 						<Image
 							src="/woman-applying-face-cream.jpg"
 							alt="Tassie Tallow Tasmania"
@@ -63,7 +63,7 @@
 					class="group relative flex flex-col"
 				>
 					<!-- Image container -->
-					<div class="bg-warm-stone/20 h-[500px] w-full overflow-hidden rounded-3xl">
+					<div class="bg-warm-stone/20 h-[400px] w-full overflow-hidden rounded-3xl lg:h-[500px]">
 						<Image
 							src="/assorted-spices"
 							alt="Tassie Tallow Tasmania"
@@ -88,7 +88,7 @@
 			<Carousel.Item class="w-full  basis-5/6 pl-6 md:basis-5/12 xl:basis-1/4">
 				<a href="/search/tassie-k9" data-sveltekit-prefetch class="group relative flex flex-col">
 					<!-- Image container -->
-					<div class="bg-warm-stone/20 h-[500px] w-full overflow-hidden rounded-3xl">
+					<div class="bg-warm-stone/20 h-[400px] w-full overflow-hidden rounded-3xl lg:h-[500px]">
 						<Image
 							src="/tassie-k9"
 							alt="Tassie Tallow Tasmania"

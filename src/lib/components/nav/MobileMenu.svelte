@@ -51,7 +51,7 @@
 					<Accordion.Item
 						class="text-md rounded-lg border-none px-4 py-0 no-underline transition-all hover:bg-muted"
 					>
-						<Accordion.Trigger class="text-md rounded-full py-2 hover:no-underline"
+						<Accordion.Trigger class=" rounded-full py-2 hover:no-underline"
 							>Shop By Category</Accordion.Trigger
 						>
 						<Accordion.Content class=" pl-2 ">
@@ -60,7 +60,7 @@
 									<Button
 										href="/search/good-fat"
 										variant="ghost"
-										class="col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
+										class="col-span-4 flex items-end justify-start rounded-full text-base hover:bg-muted"
 										>Cooking fats</Button
 									></Sheet.Close
 								>
@@ -68,7 +68,7 @@
 									<Button
 										href="/search/snacks-treats"
 										variant="ghost"
-										class="col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
+										class="col-span-4 flex items-end justify-start rounded-full text-base hover:bg-muted"
 										>Snacks & treats</Button
 									></Sheet.Close
 								>
@@ -76,7 +76,7 @@
 									<Button
 										href="/search/skincare"
 										variant="ghost"
-										class="col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
+										class="col-span-4 flex items-end justify-start rounded-full text-base hover:bg-muted"
 										>Skincare</Button
 									></Sheet.Close
 								>
@@ -84,7 +84,7 @@
 									<Button
 										href="/search/tassie-k9"
 										variant="ghost"
-										class="col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
+										class="col-span-4 flex items-end justify-start rounded-full text-base hover:bg-muted"
 										>Pet treats</Button
 									></Sheet.Close
 								>
@@ -98,7 +98,7 @@
 						href="/about"
 						variant="ghost"
 						class="text-md col-span-4 flex items-end justify-start rounded-full hover:bg-muted"
-						>About</Button
+						>Our story</Button
 					></Sheet.Close
 				>
 				<Sheet.Close>

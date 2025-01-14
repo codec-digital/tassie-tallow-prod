@@ -71,12 +71,12 @@
 	};
 </script>
 
-<footer class="p-4 lg:p-10">
+<footer class="p-4 text-white lg:p-10">
 	<div class="rounded-3xl bg-primary text-white">
-		<div class="relative mx-auto px-4 py-16 pb-14 lg:px-12">
+		<div class="relative mx-auto px-4 pb-14 pt-6 lg:px-12 lg:py-16">
 			<div class="lg:grid lg:grid-cols-3 lg:gap-8">
 				<div class="flex flex-col lg:pr-12">
-					<h3 class="mb-6 text-center font-heading text-xl lg:text-left">
+					<h3 class="mb-6 text-center font-heading text-xl text-white lg:text-left">
 						Sign up for Unique & Limited Release Products
 					</h3>
 					<div class="relative mb-2 flex w-full max-w-md items-center justify-center">
@@ -111,7 +111,7 @@
 					<p class=" text-md text-balance text-center font-bold lg:text-left">
 						100% Tasmanian, Grass-fed Tallow. Handmade in small batches.
 					</p>
-					<div class="mt-6 flex justify-center gap-x-6 lg:justify-start">
+					<div class="flex items-center justify-center gap-x-6 lg:mt-6 lg:justify-start">
 						{#each navigation.social as item}
 							<a href={item.href} class="">
 								<span class="sr-only">{item.name}</span>
@@ -121,13 +121,13 @@
 						{/each}
 					</div>
 				</div>
-				<Accordion.Root class="w-full pb-12 lg:hidden" type="single">
-					<Accordion.Item class="border-white/60">
+				<Accordion.Root class="-mt-4 w-full pb-12 lg:mt-0 lg:hidden" type="single">
+					<Accordion.Item class="border-white/40">
 						<Accordion.Trigger class="text-left font-heading font-medium  lg:text-xl"
 							>SHOP</Accordion.Trigger
 						>
-						<Accordion.Content class="text-md py-4 pl-4 ">
-							<ul role="list" class=" space-y-1">
+						<Accordion.Content class="pl-4  text-base ">
+							<ul role="list" class=" space-y-2 lg:space-y-1">
 								{#each navigation.shop as item}
 									<li>
 										<a href={item.href} class="text-md font-bold hover:underline">
@@ -138,12 +138,12 @@
 							</ul>
 						</Accordion.Content>
 					</Accordion.Item>
-					<Accordion.Item class="border-white/60">
+					<Accordion.Item class="border-white/40">
 						<Accordion.Trigger class="text-left font-heading font-medium  lg:text-xl"
 							>LEARN</Accordion.Trigger
 						>
-						<Accordion.Content class="text-md py-4 pl-4 ">
-							<ul role="list" class=" space-y-1">
+						<Accordion.Content class="pl-4  text-base ">
+							<ul role="list" class=" space-y-2 lg:space-y-1">
 								{#each navigation.support as item}
 									<li>
 										<a href={item.href} class="text-md font-bold hover:underline">
@@ -154,12 +154,12 @@
 							</ul>
 						</Accordion.Content>
 					</Accordion.Item>
-					<Accordion.Item class="border-white/60">
+					<Accordion.Item class="border-white/40">
 						<Accordion.Trigger class="text-left font-heading font-medium  lg:text-xl"
 							>ACCOUNT</Accordion.Trigger
 						>
-						<Accordion.Content class="text-md py-4 pl-4 ">
-							<ul role="list" class=" space-y-1">
+						<Accordion.Content class="pl-4  text-base ">
+							<ul role="list" class=" space-y-2 lg:space-y-1">
 								{#each navigation.company as item}
 									<li>
 										<a href={item.href} class="text-md font-bold hover:underline">
@@ -170,12 +170,12 @@
 							</ul>
 						</Accordion.Content>
 					</Accordion.Item>
-					<Accordion.Item class="border-white/60">
+					<Accordion.Item class="border-white/40">
 						<Accordion.Trigger class="text-left font-heading font-medium  lg:text-xl"
 							>SUPPORT</Accordion.Trigger
 						>
-						<Accordion.Content class="text-md py-4 pl-4 ">
-							<ul role="list" class=" space-y-1">
+						<Accordion.Content class="pl-4  text-base ">
+							<ul role="list" class=" space-y-2 lg:space-y-1">
 								{#each navigation.legal as item}
 									<li>
 										<a href={item.href} class="text-md font-bold hover:underline">

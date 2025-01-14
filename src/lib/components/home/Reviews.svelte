@@ -52,7 +52,7 @@
 	];
 </script>
 
-<section class=" px-4 pt-12 lg:px-10 lg:pt-20 xl:px-20">
+<section class=" px-4 pt-6 lg:px-10 lg:pt-20 xl:px-20">
 	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-12 lg:pb-20">
 		<h4 class="mb-2 font-sans text-lg font-bold">REVIEWS</h4>
 		<h2 class=" flex flex-col items-center justify-center text-center text-3xl lg:text-5xl">

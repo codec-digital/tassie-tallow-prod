@@ -134,7 +134,7 @@ We look forward to providing an all-natural, no-additives option to your pets fo
 <section class=" px-4 py-8 lg:px-10 xl:px-20">
 	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-8">
 		<h4 class="mb-0 font-sans text-lg font-bold">TASSIE TALLOW</h4>
-		<h2 class="mt-2 text-3xl lg:text-4xl">{activeContent.title}</h2>
+		<h2 class="mt-2 text-center text-3xl lg:text-4xl">{activeContent.title}</h2>
 		{#if activeContent.description}
 			<p class="mb-2 mt-2 max-w-2xl text-center text-muted-foreground">
 				{activeContent.description}

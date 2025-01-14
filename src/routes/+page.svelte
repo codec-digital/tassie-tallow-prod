@@ -16,7 +16,7 @@
 <Hero />
 
 <section class=" px-4 py-12 lg:px-10 lg:py-20 xl:px-20">
-	<div class="flex flex-col items-center justify-center border-b-2 border-muted pb-8">
+	<div class="flex flex-col items-center justify-center border-b-2 border-muted lg:pb-8">
 		<h4 class="mb-2 font-sans text-lg font-bold">TASSIE TALLOW</h4>
 		<h2 class=" text-center text-3xl lg:text-5xl">
 			Welcome to the home of <span class="block underline lg:inline-block">good fat</span>

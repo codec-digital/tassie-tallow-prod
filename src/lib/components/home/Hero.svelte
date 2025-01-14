@@ -79,11 +79,13 @@
 			class=" absolute inset-0 mx-auto flex h-[600px] w-full max-w-7xl flex-col items-center justify-center px-4"
 		>
 			<h1
-				class="mx-auto my-6 max-w-3xl scroll-m-20 text-center font-heading text-3xl font-medium tracking-tight text-background lg:text-5xl"
+				class="mx-auto my-6 mb-0 max-w-3xl scroll-m-20 text-center font-heading text-3xl font-medium tracking-tight text-background lg:text-5xl"
 				in:fly={{ y: 20, duration: 500, delay: 300 }}
 				out:fade={{ duration: 300 }}
 			>
-				Tasmanian Grass-fed Tallow
+				<span class="after:whitespace-pre after:content-['\A'] lg:after:content-none"
+					>Tasmanian</span
+				> Grass-fed Tallow
 			</h1>
 			<form
 				on:submit={submit}
