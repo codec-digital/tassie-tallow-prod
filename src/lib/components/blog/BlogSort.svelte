@@ -7,7 +7,11 @@
 	const categories = [
 		{ value: 'all', label: 'All Posts' },
 		{ value: 'Tallow', label: 'Tallow' },
-		{ value: 'Science', label: 'Science' }
+		// { value: 'Science', label: 'Science' },
+		{ value: 'Health', label: 'Health' },
+		{ value: 'Nutrition', label: 'Nutrition' },
+		{ value: 'Cooking', label: 'Cooking' },
+		{ value: 'Recipes', label: 'Recipes' }
 	];
 
 	$: triggerContent = categories.find((f) => f.value === $selectedCategory)?.label ?? 'All Posts';

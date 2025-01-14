@@ -3,7 +3,15 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { Facebook, Instagram, Linkedin, Mail, Twitter, Youtube } from 'lucide-svelte';
+	import {
+		ChevronDown,
+		Facebook,
+		Instagram,
+		Linkedin,
+		Mail,
+		Twitter,
+		Youtube
+	} from 'lucide-svelte';
 	// import Featured from '$lib/components/home/Featured.svelte';
 
 	import Image from '$lib/components/Image.svelte';
@@ -31,6 +39,17 @@
 		}, 200);
 		animate = true;
 	});
+
+	function handleAnchorClick(event) {
+		event.preventDefault();
+		const link = event.currentTarget;
+		const anchorId = new URL(link.href).hash.replace('#', '');
+		const anchor = document.getElementById(anchorId);
+		window.scrollTo({
+			top: anchor.offsetTop,
+			behavior: 'smooth'
+		});
+	}
 </script>
 
 <section class="relative mx-auto flex h-[600px] flex-col items-center justify-center">
@@ -63,12 +82,16 @@
 				</p>
 			</div>
 		</div>
-		<div class=" mt-6 flex max-w-lg flex-row items-center justify-between gap-4"></div>
+		<div class="pointer-events-auto mt-6 flex max-w-lg flex-row items-center justify-between gap-4">
+			<a href="#content" onclick={handleAnchorClick}
+				><ChevronDown class="h-10 w-10 text-white transition-all hover:translate-y-1" /></a
+			>
+		</div>
 	</div>
 </section>
 
-<div class="bg-[#FDFAF5]">
-	<main class="mx-auto max-w-5xl px-4 py-12 lg:pt-24">
+<div class="">
+	<main class="mx-auto max-w-5xl px-4 py-12 lg:pt-24" id="content">
 		{@html blog.content}
 	</main>
 </div>

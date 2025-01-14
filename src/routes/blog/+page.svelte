@@ -25,6 +25,7 @@
 
 	import BlogSort from '$lib/components/blog/BlogSort.svelte';
 	import { selectedCategory } from '$lib/utils/blogStore';
+	import Categories from '$lib/components/home/Categories.svelte';
 
 	const [send, receive] = crossfade({
 		duration: 400,
@@ -173,7 +174,9 @@
 		onPageChange={handlePageChange}
 	>
 		{#snippet children({ pages, currentPage })}
-			<ul class="grid auto-rows-min gap-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+			<ul
+				class="grid auto-rows-min gap-6 gap-y-16 border-b border-muted pb-12 sm:grid-cols-2 lg:grid-cols-4"
+			>
 				{#each filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) as blog, index (blog.title)}
 					<a
 						in:receive={{ key: blog.title }}
@@ -252,3 +255,5 @@
 		{/snippet}
 	</Pagination.Root>
 </div>
+
+<Categories />

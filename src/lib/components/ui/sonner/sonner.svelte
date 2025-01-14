@@ -13,7 +13,7 @@
 		unstyled: true,
 		classes: {
 			toast:
-				'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-none group-[.toaster]:shadow-lg px-6 py-4 rounded-lg flex flex-row gap-1 items-center justify-center w-auto',
+				'group toast group-[.toaster]:bg-white group-[.toaster]:text-foreground group-[.toaster]:border-none group-[.toaster]:shadow-lg px-6 py-4 rounded-lg flex flex-row gap-1 items-center justify-center w-auto',
 			description: 'group-[.toast]:text-muted-foreground text-xs min-w-48',
 			title: 'font-bold',
 
